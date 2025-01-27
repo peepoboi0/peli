@@ -49,7 +49,7 @@
 <body>
 
 <div class="game-container">
-  <h1 id="story">You are standing at the edge of a forest. What will you do?</h1>
+  <h1 id="story">You are standing at the edge of a dark forest. What will you do?</h1>
   <div class="choice-buttons">
     <button id="choice1" onclick="makeChoice(1)">Enter the forest</button>
     <button id="choice2" onclick="makeChoice(2)">Walk away from the forest</button>
@@ -61,31 +61,91 @@
 
   function makeChoice(choice) {
     if (choice === 1) {
-      storyElement.innerHTML = "You step into the forest. It's quiet and eerie. Do you go left or right?";
-      document.getElementById("choice1").innerHTML = "Go left";
-      document.getElementById("choice2").innerHTML = "Go right";
+      storyElement.innerHTML = "You step into the forest. The trees are thick, and the path is winding. Do you continue straight ahead or take a path to the right?";
+      document.getElementById("choice1").innerHTML = "Go straight ahead";
+      document.getElementById("choice2").innerHTML = "Take the path to the right";
       document.getElementById("choice1").setAttribute("onclick", "makeChoice(3)");
       document.getElementById("choice2").setAttribute("onclick", "makeChoice(4)");
     } else if (choice === 2) {
-      storyElement.innerHTML = "You walk away from the forest and find a cozy cabin. Do you enter or continue walking?";
-      document.getElementById("choice1").innerHTML = "Enter the cabin";
-      document.getElementById("choice2").innerHTML = "Continue walking";
+      storyElement.innerHTML = "You walk away from the forest and find a peaceful meadow with flowers. Do you sit and relax, or keep walking along the road?";
+      document.getElementById("choice1").innerHTML = "Sit and relax in the meadow";
+      document.getElementById("choice2").innerHTML = "Keep walking along the road";
+      document.getElementById("choice1").setAttribute("onclick", "makeChoice(7)");
+      document.getElementById("choice2").setAttribute("onclick", "makeChoice(8)");
+    } else if (choice === 3) {
+      storyElement.innerHTML = "As you walk straight ahead, you stumble upon a hidden cave. Do you enter it or keep walking?";
+      document.getElementById("choice1").innerHTML = "Enter the cave";
+      document.getElementById("choice2").innerHTML = "Keep walking";
       document.getElementById("choice1").setAttribute("onclick", "makeChoice(5)");
       document.getElementById("choice2").setAttribute("onclick", "makeChoice(6)");
-    } else if (choice === 3) {
-      storyElement.innerHTML = "You walk left and find a hidden treasure chest! Congratulations, you've won!";
-      document.getElementById("choice1").style.display = "none";
-      document.getElementById("choice2").style.display = "none";
     } else if (choice === 4) {
-      storyElement.innerHTML = "You walk right and are greeted by a group of friendly deer. They lead you to a peaceful clearing.";
-      document.getElementById("choice1").style.display = "none";
-      document.getElementById("choice2").style.display = "none";
+      storyElement.innerHTML = "You take the right path and soon discover a beautiful waterfall. Do you take a closer look or turn back?";
+      document.getElementById("choice1").innerHTML = "Take a closer look";
+      document.getElementById("choice2").innerHTML = "Turn back";
+      document.getElementById("choice1").setAttribute("onclick", "makeChoice(9)");
+      document.getElementById("choice2").setAttribute("onclick", "makeChoice(10)");
     } else if (choice === 5) {
-      storyElement.innerHTML = "You enter the cabin and meet a wise old man who offers you a powerful potion. You've gained wisdom!";
+      storyElement.innerHTML = "The cave is dark and cold, but inside, you find a glowing gem. As you take it, a magical creature appears and offers you a wish. What will you wish for?";
+      document.getElementById("choice1").innerHTML = "Wish for unlimited wealth";
+      document.getElementById("choice2").innerHTML = "Wish for eternal happiness";
+      document.getElementById("choice1").setAttribute("onclick", "makeChoice(11)");
+      document.getElementById("choice2").setAttribute("onclick", "makeChoice(12)");
+    } else if (choice === 6) {
+      storyElement.innerHTML = "You keep walking, but eventually, you find yourself lost and exhausted. You sit down on a rock, hoping someone will find you.";
       document.getElementById("choice1").style.display = "none";
       document.getElementById("choice2").style.display = "none";
-    } else if (choice === 6) {
-      storyElement.innerHTML = "You continue walking and find yourself lost in a dense part of the forest. It's getting dark!";
+    } else if (choice === 7) {
+      storyElement.innerHTML = "You sit and relax, breathing in the fresh air. Suddenly, a butterfly lands on your shoulder, and you feel at peace. This moment is perfect.";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 8) {
+      storyElement.innerHTML = "You keep walking and find an old, mysterious town. The locals seem friendly but seem to be hiding something.";
+      document.getElementById("choice1").innerHTML = "Talk to a local";
+      document.getElementById("choice2").innerHTML = "Keep walking past the town";
+      document.getElementById("choice1").setAttribute("onclick", "makeChoice(13)");
+      document.getElementById("choice2").setAttribute("onclick", "makeChoice(14)");
+    } else if (choice === 9) {
+      storyElement.innerHTML = "The waterfall is mesmerizing, and you feel a sudden sense of calm. You sit down to meditate and discover inner peace.";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 10) {
+      storyElement.innerHTML = "You turn back and wander deeper into the forest. You find an abandoned cabin, but the air inside feels strange.";
+      document.getElementById("choice1").innerHTML = "Explore the cabin";
+      document.getElementById("choice2").innerHTML = "Leave the cabin";
+      document.getElementById("choice1").setAttribute("onclick", "makeChoice(15)");
+      document.getElementById("choice2").setAttribute("onclick", "makeChoice(16)");
+    } else if (choice === 11) {
+      storyElement.innerHTML = "The magical creature grants your wish, and you are surrounded by riches beyond your imagination. However, you feel unfulfilled and long for something more.";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 12) {
+      storyElement.innerHTML = "The magical creature grants your wish for eternal happiness, and you feel an overwhelming sense of joy and contentment that lasts forever.";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 13) {
+      storyElement.innerHTML = "The local tells you about an ancient treasure hidden deep in the woods. Will you search for it or thank them and leave?";
+      document.getElementById("choice1").innerHTML = "Search for the treasure";
+      document.getElementById("choice2").innerHTML = "Thank them and leave";
+      document.getElementById("choice1").setAttribute("onclick", "makeChoice(17)");
+      document.getElementById("choice2").setAttribute("onclick", "makeChoice(18)");
+    } else if (choice === 14) {
+      storyElement.innerHTML = "You walk past the town and into the woods. Eventually, you find a serene lake and decide to spend the night there.";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 15) {
+      storyElement.innerHTML = "Inside the cabin, you discover old journals and artifacts. It's a treasure trove of forgotten history!";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 16) {
+      storyElement.innerHTML = "You leave the cabin and find a hidden trail leading to a peaceful grove. You feel at ease here.";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 17) {
+      storyElement.innerHTML = "You find the treasure hidden under a large oak tree. It's filled with jewels, gold, and artifacts from ancient times!";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 18) {
+      storyElement.innerHTML = "You thank the local and leave the town, eventually finding a beautiful garden where you decide to spend the rest of your days in peace.";
       document.getElementById("choice1").style.display = "none";
       document.getElementById("choice2").style.display = "none";
     }
