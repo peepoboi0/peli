@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Adventure</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .game-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .choice-buttons {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+<div class="game-container">
+  <h1 id="story">You are standing at the edge of a forest. What will you do?</h1>
+  <div class="choice-buttons">
+    <button id="choice1" onclick="makeChoice(1)">Enter the forest</button>
+    <button id="choice2" onclick="makeChoice(2)">Walk away from the forest</button>
+  </div>
+</div>
+
+<script>
+  let storyElement = document.getElementById("story");
+
+  function makeChoice(choice) {
+    if (choice === 1) {
+      storyElement.innerHTML = "You step into the forest. It's quiet and eerie. Do you go left or right?";
+      document.getElementById("choice1").innerHTML = "Go left";
+      document.getElementById("choice2").innerHTML = "Go right";
+      document.getElementById("choice1").setAttribute("onclick", "makeChoice(3)");
+      document.getElementById("choice2").setAttribute("onclick", "makeChoice(4)");
+    } else if (choice === 2) {
+      storyElement.innerHTML = "You walk away from the forest and find a cozy cabin. Do you enter or continue walking?";
+      document.getElementById("choice1").innerHTML = "Enter the cabin";
+      document.getElementById("choice2").innerHTML = "Continue walking";
+      document.getElementById("choice1").setAttribute("onclick", "makeChoice(5)");
+      document.getElementById("choice2").setAttribute("onclick", "makeChoice(6)");
+    } else if (choice === 3) {
+      storyElement.innerHTML = "You walk left and find a hidden treasure chest! Congratulations, you've won!";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 4) {
+      storyElement.innerHTML = "You walk right and are greeted by a group of friendly deer. They lead you to a peaceful clearing.";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 5) {
+      storyElement.innerHTML = "You enter the cabin and meet a wise old man who offers you a powerful potion. You've gained wisdom!";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    } else if (choice === 6) {
+      storyElement.innerHTML = "You continue walking and find yourself lost in a dense part of the forest. It's getting dark!";
+      document.getElementById("choice1").style.display = "none";
+      document.getElementById("choice2").style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
